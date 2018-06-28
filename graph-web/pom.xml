@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>build</artifactId>
+        <groupId>graph-web-build</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
+    <modelVersion>4.0.0</modelVersion>
+    <name>graph-web</name>
+    <artifactId>merit</artifactId>
+
+    <properties>
+        <neo4j.version>1.5.0</neo4j.version>
+        <java.version>1.8</java.version>
+        <maven-compiler-plugin.version>2.3.2</maven-compiler-plugin.version>
+        <shiro.version>1.4.0</shiro.version>
+    </properties>
+
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.neo4j.driver</groupId>
+            <artifactId>neo4j-java-driver</artifactId>
+            <version>${neo4j.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-jdbc</artifactId>
+        </dependency>
+
+        <!--<dependency>-->
+        <!--<groupId>graph-web-build</groupId>-->
+        <!--<artifactId>actuator</artifactId>-->
+        <!--<version>1.0-SNAPSHOT</version>-->
+        <!--<type>jar</type>-->
+        <!--</dependency>-->
+
+        <!--<dependency>-->
+        <!--<groupId>graph-web-build</groupId>-->
+        <!--<artifactId>authority</artifactId>-->
+        <!--<version>1.0-SNAPSHOT</version>-->
+        <!--<type>jar</type>-->
+        <!--</dependency>-->
+
+        <dependency>
+            <groupId>graph-web-build</groupId>
+            <artifactId>common</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <type>jar</type>
+        </dependency>
+
+        <dependency>
+            <groupId>graph-web-build</groupId>
+            <artifactId>datasource</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.shiro</groupId>
+            <artifactId>shiro-core</artifactId>
+            <version>${shiro.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.shiro</groupId>
+            <artifactId>shiro-web</artifactId>
+            <version>${shiro.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.shiro</groupId>
+            <artifactId>shiro-ehcache</artifactId>
+            <version>${shiro.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.shiro</groupId>
+            <artifactId>shiro-spring</artifactId>
+            <version>${shiro.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.webjars.npm</groupId>
+            <artifactId>jquery-easyui</artifactId>
+            <version>1.5.21</version>
+        </dependency>
+
+        <!--<dependency>-->
+        <!--<groupId>org.webjars.bower</groupId>-->
+        <!--<artifactId>github-com-novaeye-jquery-easyui-bower</artifactId>-->
+        <!--<version>1.5.0.1</version>-->
+        <!--</dependency>-->
+
+        <!--<dependency>-->
+        <!--<groupId>org.webjars</groupId>-->
+        <!--<artifactId>webjars-locator</artifactId>-->
+        <!--<version>0.32</version>-->
+        <!--</dependency>-->
+
+
+    </dependencies>
+
+    <build>
+        <finalName>graph-web</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven-compiler-plugin.version}</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+
+        </plugins>
+    </build>
+
+    <packaging>war</packaging>
+</project>

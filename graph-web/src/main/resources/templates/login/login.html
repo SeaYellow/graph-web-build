@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>登录</title>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width"/>
+    <link rel="stylesheet" th:href="'/css/login/login.css'"/>
+    <link rel="stylesheet" th:href="'/css/index.css'"/>
+
+</head>
+<body>
+<!--<div class="logo"></div>-->
+<div class="login-tempo">
+    <div class="login-logo-title">
+        <div class="login-title">企业知识图谱平台</div>
+    </div>
+    <div class="login-form">
+        <form role="form" th:action="@{/login}" method="POST"
+              onkeydown="if(event.keyCode == 13 &amp;&amp; event.target.tagName==&#39;INPUT&#39; &amp;&amp; event.target.type===&#39;text&#39;){return false;}">
+            <div class="login-username">用户名</div>
+            <input id="userName" name="userName" type="text" placeholder="用户名" class="name" autocomplete="off"
+                   style="opacity: 0;"/>
+            <div class="login-password">密码</div>
+            <input id="password" name="password" placeholder="密码" class="password" autocomplete="off" type="password"
+                   style="opacity: 0;"/>
+            <div id="northElectLoginTips_error" class="northElectLoginTips_error" style="visibility: collapse;">
+                <div id="errmsg"></div>
+            </div>
+            <div class="login-button">
+                <div class="login-button-label">登录</div>
+                <input type="submit" class="lgoin" value="登录"/>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="login-dot"></div>
+</body>
+</html>
